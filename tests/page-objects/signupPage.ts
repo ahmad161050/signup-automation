@@ -43,8 +43,9 @@ export class SignUpPage {
     private countryDropdownOption = (country: string) => `li[role="option"]:has-text("${country}")`;
     // Locator for the Sweden option in the country dropdown
     private get countryDropdownSweden() {
-        return this.page.locator('input[name="country"][role="combobox"]');
+        return this.page.locator('div[data-testid="autocomplete-menu-portal"] ul > li:has-text("Sweden")');
     }
+
 
 
     // Open dropdown button
@@ -81,22 +82,20 @@ export class SignUpPage {
 
     // Navigate to the sign-in page
     async navigateToSignIn() {
-        await this.page.goto(this.signInUrl, { waitUntil: 'domcontentloaded', timeout: 30000 }); // Increase timeout
-        await this.page.waitForLoadState('networkidle'); // Ensures all network requests are complete
-        await this.page.waitForSelector(this.signUpButton, { timeout: 15000 }); // Ensure main element is loaded
+        await this.page.goto(this.signInUrl); // Waits for full load
     }
-
-
 
     // Accept cookies on the sign-in page
     async acceptCookies() {
-        await this.page.click(this.acceptCookiesButton, { timeout: 30000 });
+        await this.page.click(this.acceptCookiesButton);
     }
+
 
     // Check if the cookie banner is still visible
     async isCookieBannerVisible(): Promise<boolean> {
-        return await this.page.locator(this.cookieBanner).isVisible();
+        return await this.page.locator(this.cookieBanner).isVisible({ timeout: 60000 });
     }
+
 
     // Validate if the current page is Sign-In page
     async isOnSignInPage(): Promise<boolean> {
@@ -222,7 +221,8 @@ export class SignUpPage {
 
     // Check if the user is on Step 3
     async isOnSignUpStep3(): Promise<boolean> {
-        return await this.page.locator(this.step3Header).isVisible();
+        await this.page.waitForSelector(this.step3Header, { state: "visible", timeout: 30000 });
+        return true;
     }
     // Enter Company Name
     async enterCompanyName(companyName: string) {
@@ -262,8 +262,14 @@ export class SignUpPage {
 
     // Check if the country not found message appears
     async isCountryNotFoundMessageVisible(): Promise<boolean> {
-        return await this.page.locator(this.countryNotFoundMessage).isVisible();
+        const locator = this.page.locator(this.countryNotFoundMessage);
+
+        // Wait for up to 5 seconds for the message to appear
+        await locator.waitFor({ state: "visible", timeout: 5000 }).catch(() => { });
+
+        return await locator.isVisible();
     }
+
     // Method to clear the country field
     async clearCountryField() {
         await this.page.locator(this.countryDropdown).fill(""); // Clears the input
@@ -271,24 +277,51 @@ export class SignUpPage {
 
     // Search for a country in the dropdown field
     async searchCountryInDropdown(countryName: string) {
-        await this.page.waitForSelector(this.countryDropdown, { state: 'visible', timeout: 10000 }); // Wait for input to be visible
+        this.clearCountryDropdown();
         await this.page.fill(this.countryDropdown, countryName);
+
     }
-    async waitForDropdownOptions() {
-        await this.page.waitForSelector('ul[role="listbox"]', { state: 'attached', timeout: 10000 }); // Wait for dropdown to be attached
-        await this.page.waitForSelector('ul[role="listbox"] li', { state: 'visible', timeout: 10000 }); // Ensure list items appear
-    }
-    async searchAndSelectCountry(countryName: string) {
-        await this.searchCountryInDropdown(countryName);
-        await this.waitForDropdownOptions();
-        await this.page.locator(`ul[role="listbox"] li:has-text("${countryName}")`).click({ force: true });
+    private get countryDropdownSweden2() {
+        return this.page.locator('div[data-testid="autocomplete-menu-portal"] ul > li:has-text("Sweden")');
     }
 
-    // Select a country from the dropdown search results
     async selectCountryFromDropdown() {
-        // Wait for the input field to be filled with the searched country
-        await this.countryDropdownSweden.click({ force: true });
+        console.log("Waiting for dropdown to be visible...");
+        await this.page.waitForSelector(this.dropdownList, { state: "visible", timeout: 30000 });
+    
+        console.log("Trying to find and select Sweden...");
+    
+        let attempts = 0;
+        let isVisible = false;
+    
+        while (attempts < 15) { // Max 15 scroll attempts to avoid infinite loop
+            const countryOption = this.page.locator(`div[data-testid="autocomplete-menu-portal"] ul > li:has-text("Sweden")`);
+    
+            isVisible = await countryOption.isVisible();
+            if (isVisible) {
+                console.log("Sweden found, clicking...");
+                await countryOption.scrollIntoViewIfNeeded();
+                await countryOption.click({ force: true });
+                return;
+            }
+    
+            console.log(`Sweden not found, scrolling attempt ${attempts + 1}`);
+            await this.page.mouse.wheel(0, 300);
+            await this.page.waitForTimeout(500); // Give some time for items to load
+            attempts++;
+        }
+    
+        throw new Error("Sweden option not found in dropdown after scrolling.");
     }
+    
+    
+    // Select a country from the dropdown search results
+    /*
+    async selectCountryFromDropdown() {
+        await this.countryDropdownSweden.click({ force: true }); // Click with force
+    }
+
+    */
 
     // Method to get the selected country text
     async getSelectedCountry(): Promise<string> {

@@ -6,21 +6,15 @@ let page: Page;
 let signUpPage: SignUpPage;
 
 Given("I navigate to the given sign-in url", async function () {
-  const browser = await chromium.launch({ headless: false, slowMo: 100 }); // Slow down execution slightly
-  page = await browser.newPage();
-  signUpPage = new SignUpPage(page);
+  const browser = await chromium.launch({ headless: false});
+    page = await browser.newPage();
+    signUpPage = new SignUpPage(page);
 
-  await signUpPage.navigateToSignIn();
-  await page.waitForTimeout(3000);
-
-  // Explicit waits to avoid timeouts
-  await page.waitForLoadState('domcontentloaded'); // Ensure DOM is loaded
-  await page.waitForLoadState('networkidle'); // Ensure all requests are finished
+    await signUpPage.navigateToSignIn();
 });
 
 
 When("I accept the cookies", async function () {
-  await page.waitForTimeout(3000);
   await signUpPage.acceptCookies();
 });
 
@@ -42,14 +36,14 @@ When("I click on the {string} button", async function (buttonText) {
   }
 });
 
-Then("I should be navigated to the sign-up page step 1", async function () {
+Then("I should be navigated to the sign-up page step-1", async function () {
   const isSignUpPage = await signUpPage.isOnSignUpPage();
   expect(isSignUpPage).toBeTruthy();
 });
 
 When("I leave all mandatory fields empty", async function () { });
 
-When("I try to proceed from step 1 to step 2 of sign-up", async function () { });
+When("I try to proceed from step-1 to step-2 of sign-up", async function () { });
 
 Then("I should see an error message {string}", async function (errorMessage) { });
 
@@ -58,7 +52,7 @@ When("I enter an invalid email format {string}", async function (email) { });
 When("I enter a non-work email {string}", async function (email) { });
 
 When("I enter a valid work email {string}", async function (email) {
-  await page.waitForTimeout(4000);
+  await page.waitForTimeout(2000);
   await signUpPage.enterEmail(email);
 });
 
@@ -102,24 +96,24 @@ Then('The "Try for free" button should be enabled', async function () {
   expect(isEnabled).toBeTruthy();
 });
 
-When("any required field is missing or invalid in step 1", async function () { });
+When("any required field is missing or invalid in step-1", async function () { });
 
 
-When("I added valid input to all required fields in step 1", async function () { });
+When("I added valid input to all required fields in step-1", async function () { });
 
-When('I click on "Try for free" button in step 1', async function () {
+When('I click on "Try for free" button in step-1', async function () {
   await signUpPage.clickTryForFreeButton();
 });
 
-Then("I should be navigated to sign-up page step 2", async function () {
+Then("I should be navigated to sign-up page step-2", async function () {
   const isStep2Page = await signUpPage.isOnSignUpStep2();
   expect(isStep2Page).toBeTruthy();
 });
-When("I click on {string} button in step 2", async function (buttonText) { });
+When("I click on {string} button in step-2", async function (buttonText) { });
 
-Then("The mandatory email field should contain {string} in step 1", async function (email) { });
+Then("The mandatory email field should contain {string} in step-1", async function (email) { });
 
-Then("The mandatory password field should contain {string} step 1", async function (password) { });
+Then("The mandatory password field should contain {string} step-1", async function (password) { });
 
 Then("The Terms and Conditions checkbox should remain checked", async function () { });
 
@@ -127,7 +121,7 @@ When("I leave the First Name and Last Name fields empty", async function () {
   await signUpPage.clearFirstNameField();
   await signUpPage.clearLastNameField();
 });
-When("I try to proceed from step 2 to step 3 of signup", async function () {
+When("I try to proceed from step-two to step-three of sign-up", async function () {
   await signUpPage.clickNextStepButton();
 });
 Then('I should see an error message {string} and {string}', async function (firstNameError, lastNameError) {
@@ -137,7 +131,7 @@ Then('I should see an error message {string} and {string}', async function (firs
   expect(firstNameErrorVisible).toBeTruthy();
   expect(lastNameErrorVisible).toBeTruthy();
 });
-Then("The {string} button should be disabled in step 2", async function (buttonText) {
+Then("The {string} button should be disabled in step-2", async function (buttonText) {
   const isDisabled = await signUpPage.isNextStepButtonDisabled();
   expect(isDisabled).toBeTruthy();
 });
@@ -158,7 +152,7 @@ When("I enter phone number {string}", async function (phoneNumber) {
 
 Then("The phone number field should accept the input", async function () { });
 
-Then("The {string} button should be enabled in step 2", async function (button) {
+Then("The {string} button should be enabled in step-2", async function (button) {
   if (button === "Next Step") {
     const isNextStepEnabled = await signUpPage.isNextStepButtonEnabled();
     expect(isNextStepEnabled).toBeTruthy();
@@ -166,11 +160,11 @@ Then("The {string} button should be enabled in step 2", async function (button) 
     throw new Error(`Button '${button}' not found.`);
   }
 });
-When("any required field is missing or invalid in step 2", async function () { });
+When("any required field is missing or invalid in step-2", async function () { });
 
-When("I complete all required fields in step 2", async function () { });
+When("I complete all required fields in step-2", async function () { });
 
-Then("I should be navigated to sign-up step 3", async function () {
+Then("I should be navigated to sign-up step-3", async function () {
   const isStep3Visible = await signUpPage.isOnSignUpStep3();
   expect(isStep3Visible).toBeTruthy();
 });
@@ -179,11 +173,11 @@ When("I leave the Company Name field empty", async function () {
   await signUpPage.enterCompanyName(""); // Enter empty value
 });
 
-When("I try to proceed to create an account in step 3", async function () {
+When("I try to proceed to create an account in step-3", async function () {
   await signUpPage.clickCreateAccountButton();
 });
 
-Then("I should see an error message {string} in step 3", async function (errorMessage) {
+Then("I should see an error message {string} in step-3", async function (errorMessage) {
   const errorVisible = await signUpPage.isCompanyNameErrorVisible(errorMessage);
   expect(errorVisible).toBeTruthy();
 });
@@ -203,10 +197,11 @@ When("I leave the country dropdown empty", async function () {
   await signUpPage.clearCountryDropdown();  // Method to clear or leave dropdown empty
 });
 
-Then("I should see an error message {string} in step 3 country field", async function (errorMessage) { });
+Then("I should see an error message {string} in step-3 country field", async function (errorMessage) { });
 
 When("I search for a country {string} that is not listed in country drop-down", async function (country) {
   await signUpPage.searchCountry(country);
+
 });
 
 Then("The info text 'Can't find your country? Contact us.' should be displayed", async function () {
@@ -214,7 +209,7 @@ Then("The info text 'Can't find your country? Contact us.' should be displayed",
   expect(isInfoDisplayed).toBeTruthy();
 });
 
-When('I click on "Contact us" in country drop-down in step 3', async function () {
+When('I click on "Contact us" in country drop-down in step-3', async function () {
 });
 
 Then("I should be navigated to the 'Contact Us' form", async function () { });
@@ -226,6 +221,7 @@ When("I clear the country drop-down field", async function () {
 });
 
 When('I search for a country "{string}" in drop-down search', async function (countryName) {
+  await signUpPage.clearCountryField();
   await signUpPage.searchCountry(countryName);
 });
 
@@ -234,8 +230,12 @@ When('I search the existing country {string} in drop-down search', async functio
 });
 
 When('I select the country from drop-down search results', async function () {
-  await page.waitForTimeout(3000);
-  await signUpPage.selectCountryFromDropdown();
+  try {
+    await signUpPage.selectCountryFromDropdown();
+} catch (error) {
+    console.error("Error selecting the country: ", error);
+    throw error; // Ensure the error is propagated
+}
 });
 
 Then('The country {string} should be selected in the country field', async function (expectedCountry) {
