@@ -1,0 +1,1317 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "user-signup-flow;handle-cookies-on-the-sign-in-page",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Handle cookies on the sign-in page",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "I navigate to the given sign-in url",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:8"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 5012403334,
+              "error_message": "Error: function timed out, ensure the promise resolves within 5000 milliseconds\n    at Timeout.<anonymous> (/Users/ahmadraza/signup-automation/node_modules/@cucumber/cucumber/src/time.ts:52:14)\n    at listOnTimeout (node:internal/timers:569:17)\n    at processTimers (node:internal/timers:512:7)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "I accept the cookies",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:22"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "The cookies banner should disappear",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:27"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I should be navigated to the sign-in page",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:32"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "user-signup-flow;navigate-to-sign-up-page-from-sign-in-page",
+        "keyword": "Scenario",
+        "line": 9,
+        "name": "Navigate to sign-up page from sign-in page",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 10,
+            "name": "I should be navigated to the sign-in page",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:32"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2747417
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 11,
+            "name": "I click on the \"Start a free trial\" button",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:37"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 5003228292,
+              "error_message": "Error: function timed out, ensure the promise resolves within 5000 milliseconds\n    at Timeout.<anonymous> (/Users/ahmadraza/signup-automation/node_modules/@cucumber/cucumber/src/time.ts:52:14)\n    at listOnTimeout (node:internal/timers:569:17)\n    at processTimers (node:internal/timers:512:7)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 12,
+            "name": "I should be navigated to the sign-up page step 1",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:45"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "user-signup-flow;handle-cookies-on-the-sign-up-page",
+        "keyword": "Scenario",
+        "line": 14,
+        "name": "Handle cookies on the sign-up page",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 15,
+            "name": "I accept the cookies",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:22"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 5001701291,
+              "error_message": "Error: function timed out, ensure the promise resolves within 5000 milliseconds\n    at Timeout.<anonymous> (/Users/ahmadraza/signup-automation/node_modules/@cucumber/cucumber/src/time.ts:52:14)\n    at listOnTimeout (node:internal/timers:569:17)\n    at processTimers (node:internal/timers:512:7)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 16,
+            "name": "The cookies banner should disappear",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:27"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "user-signup-flow;validate-email,-password,-and-terms-acceptance-in-step-1",
+        "keyword": "Scenario",
+        "line": 18,
+        "name": "Validate email, password, and terms acceptance in step 1",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 19,
+            "name": "I should be navigated to the sign-up page step 1",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:45"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1538625
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 20,
+            "name": "I leave all mandatory fields empty",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:50"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 208833
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 21,
+            "name": "I try to proceed from step 1 to step 2 of sign-up",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:52"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 138167
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 22,
+            "name": "I should see an error message \"Work email is required.\"",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:54"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 220083
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 23,
+            "name": "I should see an error message \"Min. 8 characters\"",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:54"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 92459
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 24,
+            "name": "I should see an error message \"At least 1 letter\"",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:54"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 189958
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 25,
+            "name": "I should see an error message \"At least 1 number\"",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:54"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 186125
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 26,
+            "name": "I should see an error message \"Please accept the Terms and Conditions to continue.\"",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:54"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 51875
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 28,
+            "name": "I enter an invalid email format \"invalidemail.com\"",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:56"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 151167
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 29,
+            "name": "I should see an error message \"Please correct the e-mail address.\"",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:54"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 66042
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 31,
+            "name": "I enter a non-work email \"ahmad@gmail.com\"",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:58"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 241582
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 32,
+            "name": "I should see an error message \"Please provide your work email.\"",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:54"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 51165
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 34,
+            "name": "I enter a valid work email \"test@company.com\"",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:60"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4131781874
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 35,
+            "name": "The email field should accept the input",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:65"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 520442708
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 37,
+            "name": "I enter a password less than 8 characters \"short\"",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:71"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 245832
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 38,
+            "name": "I should see an error message \"Min. 8 characters\"",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:54"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 82832
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 40,
+            "name": "I enter a password without numbers \"PasswordTest\"",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:73"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 86165
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 41,
+            "name": "I should see an error message \"At least 1 number\"",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:54"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 52250
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 43,
+            "name": "I enter a password without letters \"12345678\"",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:75"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 77416
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 44,
+            "name": "I should see an error message \"At least 1 letter\"",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:54"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 50249
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 46,
+            "name": "I enter a valid password \"Password1\"",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:77"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2146362958
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 47,
+            "name": "The password field should accept the input",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:82"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 518617958
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 49,
+            "name": "I check the Terms and Conditions checkbox",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:88"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2154566083
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 50,
+            "name": "The error for terms acceptance should disappear",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:93"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 511154000
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "user-signup-flow;validate-'try-for-free'-button-state-based-on-valid-inputs-in-step-1",
+        "keyword": "Scenario",
+        "line": 52,
+        "name": "Validate 'Try for free' button state based on valid inputs in step 1",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 53,
+            "name": "I should be navigated to the sign-up page step 1",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:45"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1756209
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 57,
+            "name": "The \"Try for free\" button should be enabled",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:100"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4686167
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 59,
+            "name": "any required field is missing or invalid in step 1",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:105"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 257042
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "user-signup-flow;validate-navigation-from-step-1-to-step-2",
+        "keyword": "Scenario",
+        "line": 62,
+        "name": "Validate navigation from step 1 to step 2",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 63,
+            "name": "I should be navigated to the sign-up page step 1",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:45"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1245250
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 64,
+            "name": "I added valid input to all required fields in step 1",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:108"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 80250
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 65,
+            "name": "I click on \"Try for free\" button in step 1",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:110"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 175025458
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 66,
+            "name": "I should be navigated to sign-up page step 2",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:114"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2121499
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "user-signup-flow;validate-data-persistence-when-navigating-back-to-step-1-from-step-2-and-navigate-back-to-step-2",
+        "keyword": "Scenario",
+        "line": 68,
+        "name": "Validate data persistence when navigating back to step 1 from step 2 and Navigate back to step 2",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 69,
+            "name": "I should be navigated to sign-up page step 2",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:114"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1559791
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 70,
+            "name": "I click on \"Back\" button in step 2",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:118"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 92207
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 71,
+            "name": "The mandatory email field should contain \"test@company.com\" in step 1",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:120"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 55124
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 72,
+            "name": "The mandatory password field should contain \"Password1\" step 1",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:122"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 44166
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 73,
+            "name": "The Terms and Conditions checkbox should remain checked",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:124"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 32084
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 76,
+            "name": "I should be navigated to sign-up page step 2",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:114"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1857249
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "user-signup-flow;validate-required-fields-error-messages-in-step-2",
+        "keyword": "Scenario",
+        "line": 78,
+        "name": "Validate required fields error messages in step 2",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 79,
+            "name": "I should be navigated to sign-up page step 2",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:114"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2146874
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 80,
+            "name": "I leave the First Name and Last Name fields empty",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:126"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 233301541
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 81,
+            "name": "I try to proceed from step 2 to step 3 of signup",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:130"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 176498167
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 82,
+            "name": "I should see an error message \"First name is required\" and \"Last name is required\"",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:133"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5047625
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 83,
+            "name": "The \"Next Step\" button should be disabled in step 2",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:140"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2305000
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "user-signup-flow;validate-first-name-and-last-name-inputs",
+        "keyword": "Scenario",
+        "line": 85,
+        "name": "Validate First Name and Last Name inputs",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 86,
+            "name": "I should be navigated to sign-up page step 2",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:114"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2070416
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 87,
+            "name": "I enter a valid First Name \"John\"",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:144"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 115096041
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 88,
+            "name": "I enter a valid Last Name \"Doe\"",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:148"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1132840042
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 89,
+            "name": "The First Name and Last Name fields should accept input without error",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:153"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 521958
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "user-signup-flow;validate-phone-number-field-accepts-valid-input",
+        "keyword": "Scenario",
+        "line": 92,
+        "name": "Validate phone number field accepts valid input",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 93,
+            "name": "I should be navigated to sign-up page step 2",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:114"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7693041
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 94,
+            "name": "I enter phone number \"1234567890\"",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:155"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 136692249
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 95,
+            "name": "The phone number field should accept the input",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:159"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 208708
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "user-signup-flow;validate-'next-step'-button-state-based-on-input-in-step-2",
+        "keyword": "Scenario",
+        "line": 97,
+        "name": "Validate 'Next Step' button state based on input in step 2",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 98,
+            "name": "I should be navigated to sign-up page step 2",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:114"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3011374
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 102,
+            "name": "The \"Next Step\" button should be enabled in step 2",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:161"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2028292
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 104,
+            "name": "any required field is missing or invalid in step 2",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:169"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 72000
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "user-signup-flow;validate-navigation-from-step-2-to-step-3",
+        "keyword": "Scenario",
+        "line": 107,
+        "name": "Validate navigation from step 2 to step 3",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 108,
+            "name": "I should be navigated to sign-up page step 2",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:114"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2254834
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 109,
+            "name": "I complete all required fields in step 2",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:171"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 109999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 110,
+            "name": "I try to proceed from step 2 to step 3 of signup",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:130"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 200070292
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 111,
+            "name": "I should be navigated to sign-up step 3",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:173"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3225999
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "user-signup-flow;validate-company-name-mandatory-field",
+        "keyword": "Scenario",
+        "line": 113,
+        "name": "Validate company name mandatory field",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 114,
+            "name": "I should be navigated to sign-up step 3",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:173"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1979999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 119,
+            "name": "I enter a company name \"Plazz AG\" in Company Name field",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:191"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 117876999
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "user-signup-flow;validate-country-dropdown-presence",
+        "keyword": "Scenario",
+        "line": 122,
+        "name": "Validate country dropdown presence",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 123,
+            "name": "I should be navigated to sign-up step 3",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:173"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2787208
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 124,
+            "name": "The \"Where is your company registered?\" dropdown should be visible",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:197"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1575666
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "user-signup-flow;validate-sign-up-form-submission-without-selecting-a-country",
+        "keyword": "Scenario",
+        "line": 126,
+        "name": "Validate sign-up form submission without selecting a country",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 127,
+            "name": "I should be navigated to sign-up step 3",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:173"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2815083
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "user-signup-flow;validate-navigation-to-'contact-us'-form-when-no-country-is-found",
+        "keyword": "Scenario",
+        "line": 132,
+        "name": "Validate navigation to 'Contact Us' form when no country is found",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 133,
+            "name": "I should be navigated to sign-up step 3",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:173"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1850875
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 134,
+            "name": "I search for a country \"Pakistan\" that is not listed in country drop-down",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:208"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 127030040
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 135,
+            "name": "The info text 'Can't find your country? Contact us.' should be displayed",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:212"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2035459
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 136,
+            "name": "I click on \"Contact us\" in country drop-down in step 3",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:217"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 73958
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 137,
+            "name": "I should be navigated to the 'Contact Us' form",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:220"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 46584
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "user-signup-flow;validate-navigation-back-to-signup-form-from-'contact-us'-form",
+        "keyword": "Scenario",
+        "line": 139,
+        "name": "Validate navigation back to signup form from 'Contact Us' form",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 140,
+            "name": "I should be navigated to the 'Contact Us' form",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:220"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 23291
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 141,
+            "name": "I click on \"Back\" button to navigate back to sign-up page",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:222"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 50625
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 142,
+            "name": "I should be navigated to sign-up step 3",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:173"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1687999
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "user-signup-flow;validate-selecting-a-country-by-searching-an-existing-country-in-the-dropdown",
+        "keyword": "Scenario",
+        "line": 144,
+        "name": "Validate selecting a country by searching an existing country in the dropdown",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 145,
+            "name": "I should be navigated to sign-up step 3",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:173"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2120999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 146,
+            "name": "I clear the country drop-down field",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:224"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 126122833
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 147,
+            "name": "I search the existing country \"Sweden\" in drop-down search",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:232"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 115256957
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 148,
+            "name": "I select the country from drop-down search results",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:236"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3118826625
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 149,
+            "name": "The country \"Sweden\" should be selected in the country field",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:241"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7495916
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "user-signup-flow;validate-selecting-a-country-by-scrolling-the-existing-countries-drop-down-list",
+        "keyword": "Scenario",
+        "line": 151,
+        "name": "Validate selecting a country by scrolling the existing countries drop-down list",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 152,
+            "name": "I should be navigated to sign-up step 3",
+            "match": {
+              "location": "tests/step-definitions/signupSteps.ts:173"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3373292
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "user-signup-flow",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "User Signup Flow",
+    "tags": [],
+    "uri": "tests/features/signup.feature"
+  }
+]

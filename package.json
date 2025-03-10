@@ -1,0 +1,20 @@
+{
+  "name": "signup-automation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cucumber-js tests/features --require tests/step-definitions/**/*.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@cucumber/cucumber": "^11.2.0",
+    "@playwright/test": "^1.51.0",
+    "playwright": "^1.51.0",
+    "playwright-cucumber": "^1.0.15",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
+  }
+}
