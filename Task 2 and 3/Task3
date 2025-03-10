@@ -1,0 +1,127 @@
+### Testing Strategy for Task 3 (Boundary Value Analysis)
+
+I will thoroughly test the behavior of the iOS application's password-change functionality, using Boundary Value Analysis (BVA). My goal is to carefully validate boundary points and conditions around password complexity and functionality. Specifically, I will test scenarios around:
+
+- Validating 'Save' button disabled when both "new" and "current" password fields are empty.
+- Validating 'Save' button disabled when only 'current password' is entered (new password missing).
+- Validating 'Save' button disabled when only 'new password' is entered (current password missing).
+- Validating hide/show 'new password' icon state:
+  - Disabled when the field is empty.
+  - Enabled when at least 1 character is present.
+- Validating hide/show 'current password' icon state:
+  - Disabled when 'current password' field is empty.
+  - Enabled when 'current password' field has text (at least 1 char).
+- Validating hide/show icon functionality for both 'new' and 'current' passwords.
+- Validating password assertions for 'Min. 8 characters', 'At least 1 letter', and 'At least 1 number':
+  - Assertions inactive/active based on password content.
+- Validating the 'Save' button state based on the status of password criteria assertions.
+- Validating clear and correct error message when 'current password' is incorrect.
+- Validating success message and navigation behavior on successful password update.
+
+### Detailed Test Cases
+
+**Scenario 1: Save Button State Validation**
+
+- **Test Case 1:** Both fields empty
+  - Expected: 'Save' button disabled.
+  - Verification: Confirm visually.
+
+- **Test Case 2:** Only 'current password' entered
+  - Expected: 'Save' button disabled.
+  - Verification: Confirm visually.
+
+- **Test Case 3:** Only 'new password' entered
+  - Expected: 'Save' button disabled.
+  - Verification: Confirm visually.
+
+**Scenario 2: Hide/Show Password Icons**
+
+- **Test Case 3:** 'New password' icon disabled when field is empty
+  - Expected: Icon state disabled.
+  - Verification: Confirm visually.
+
+- **Test Case 4:** 'New password' icon enabled when at least 1 character is entered
+  - Expected: Icon state enabled.
+  - Verification: Confirm visually.
+
+- **Test Case 5:** 'Current password' icon disabled when empty
+  - Expected: Icon state disabled.
+  - Verification: Confirm visually.
+
+- **Test Case 5:** 'Current password' icon enabled when at least 1 character is entered
+  - Expected: Icon enabled state.
+  - Verification: Confirm visually.
+
+- **Test Case 5:** Hide/Show functionality for 'new password'
+  - Step: Toggle the icon.
+  - Expected: Password visibility toggles appropriately.
+  - Verification: Confirm visually.
+
+- **Test Case 6:** Hide/Show functionality for 'current password'
+  - Step: Toggle the icon.
+  - Expected: Password visibility toggles appropriately.
+  - Verification: Confirm visually.
+
+**Scenario: Password Criteria Assertions**
+
+- **Test Case 7:** Less than 8 characters
+  - Expected: 'Min. 8 characters' assertion inactive.
+  - Verification: Confirm visually.
+
+- **Test Case 7:** Exactly 8 characters or more
+  - Expected: 'Min. 8 characters' assertion active.
+  - Verification: Confirm visually.
+
+- **Test Case 8:** No letters included
+  - Expected: 'At least 1 letter' assertion inactive.
+  - Verification: Confirm visually.
+
+- **Test Case 8:** At least 1 letter included
+  - Expected: 'At least 1 letter' assertion active.
+  - Verification: Confirm visually.
+
+- **Test Case 9:** No numeric characters
+  - Expected: 'At least 1 number' assertion inactive.
+  - Verification: Confirm visually.
+
+- **Test Case 10:** At least one numeric character included
+  - Expected: 'At least 1 number' assertion active.
+  - Verification: Confirm visually.
+
+**Scenario: 'Save' Button Enabling/Disabling Based on Assertions**
+
+- **Test Case 11:** All criteria met
+  - Step: Both passwords provided correctly, assertions active.
+  - Expected: 'Save' button enabled.
+  - Verification: Confirm visually.
+
+- **Test Case 12:** Reduce new password length below 8 characters after enabling CTA
+  - Expected: 'Save' button becomes disabled, assertion inactive.
+  - Verification: Confirm visually.
+
+- **Test Case 13:** Remove letters from new password after enabling CTA
+  - Expected: 'Save' button disabled, letter assertion inactive.
+  - Verification: Confirm visually.
+
+- **Test Case 14:** Remove numbers from new password after enabling CTA
+  - Expected: 'Save' button becomes disabled, numeric assertion inactive.
+  - Verification: Confirm visually.
+
+**Scenario: Error and Success Messages**
+
+- **Test Case 14:** Incorrect current password entered
+  - Step: Press 'Save' with incorrect current password.
+  - Expected: Clear error message indicating incorrect password.
+  - Verification: Confirm visually.
+
+- **Test Case 15:** Correct current password entered
+  - Step: Press 'Save' with correct current and new passwords.
+  - Expected: Clear success message displayed.
+  - Verification: Confirm visually.
+
+- **Test Case 15:** Successful password update navigation validation
+  - Expected: User navigated to settings page after successful update.
+  - Verification: Confirm navigation visually.
+
+
+

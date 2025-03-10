@@ -1,0 +1,97 @@
+### Testing Strategy for Task 2 (Boundary Value Analysis)
+
+I will thoroughly test the behavior of the Android application's "Purpose" field when submitting an expense, using Boundary Value Analysis (BVA). My goal is to precisely verify the boundary points where the app’s behavior is expected to change. I will specifically test scenarios around:
+
+- Validate CTA button state -> Disabled when there is no text in "Purpose" field.
+- Validate CTA button state -> Enabled when there is at least 1 character in "Purpose" field.
+- Text suggestions visibility at or below 99 characters (≤99 chars).
+- Text suggestions visibility disappearance at exactly 100 characters (>99 chars).
+- Restoring text suggestions visibility again after reducing characters (≤99 chars).
+- Character counter invisibility until 499 characters (≤499 chars).
+- Appearance of the character counter at exactly 500 characters (>499 chars).
+- Restoring character counter invisibility again after reducing characters back below 500 (≤499 chars).
+- Invisibility of the "Purpose" field error state and CTA enabled state until exactly 1000 characters (≤1000 chars).
+- Triggering of the error state, CTA disabling, and display of an appropriate error message at exactly 1001 characters (>1000 chars).
+- Validating correct error message.
+- Restoring the "Purpose" field from error state and enabling the CTA again at 1000 or fewer characters (≤1000 chars).
+
+### Detailed Test Cases:
+
+**Scenario: CTA Button State**
+
+- **Test Case 1:** No text in "Purpose" field
+  - Expected: CTA is disabled.
+  - Verification: Confirm visually.
+
+- **Test Case 2:** At least 1 character in "Purpose" field
+  - Expected: CTA is enabled.
+  - Verification: Confirm visually.
+
+**Scenario: Text Suggestions Visibility**
+
+- **Test Case 3:** Exactly 99 characters
+  - Expected: Suggestions visible.
+  - Verification: Confirm visually.
+
+- **Test Case 4:** Exactly 100 characters
+  - Expected: Suggestions disappear immediately.
+  - Verification: Confirm visually.
+
+- **Test Case 5:** Exactly 101 characters
+  - Expected: Suggestions remain hidden.
+  - Verification: Confirm visually.
+
+- **Test Case 6:** Reduce to exactly 99 characters after exceeding 100
+  - Expected: Suggestions reappear.
+  - Verification: Confirm visually.
+
+**Scenario: Character Counter Visibility**
+
+- **Test Case 7:** Exactly 499 characters
+  - Expected: No counter visible.
+  - Verification: Confirm visually.
+
+- **Test Case 8:** Exactly 500 characters
+  - Expected: Counter appears as "500/1000".
+  - Verification: Confirm visually.
+
+- **Test Case 9:** Exactly 501 characters
+  - Expected: Counter increments correctly to "501/1000".
+  - Verification: Confirm visually.
+
+- **Test Case 10:** Reduce to exactly 499 characters from above 500
+  - Expected: Counter disappears.
+  - Verification: Confirm visually.
+
+**Scenario: Error State and CTA (Submit Button)**
+
+- **Test Case 11:** Exactly 999 characters
+  - Expected: No error state, CTA enabled.
+  - Verification: Confirm visually.
+
+- **Test Case 12:** Exactly 1000 characters
+  - Expected: No error, CTA enabled.
+  - Verification: Confirm visually.
+
+- **Test Case 13:** Exactly 1001 characters
+  - Expected:
+  - Field immediately shows error (highlighted red).
+  - CTA becomes disabled.
+  - Correct error message clearly displayed indicating "Character limit exceeded".
+  - Verification: Confirm visually.
+
+- **Test Case 14:** More than 1001 characters (e.g., 1050 characters)
+  - Expected: Persistent clear error message, CTA remains disabled, error state remains.
+  - Verification: Confirm visually.
+
+**Scenario: Restoring from Error State**
+
+- **Test Case 15:** Exactly 1000 characters after exceeding the limit
+  - Expected: Error clears, CTA reactivates.
+  - Verification: Confirm visually.
+
+- **Test Case 16:** Exactly 999 characters
+  - Expected: Error state clears completely, CTA remains active.
+  - Verification: Confirm visually.
+
+
